@@ -19,10 +19,10 @@ class InvestedMixin(CreateAndCloseDateMixin):
     __table_args__ = (
         CheckConstraint(
             "full_amount > 0", name='check_full_amount_positive'
-            ),
+        ),
         CheckConstraint(
             "invested_amount >= 0", name='check_pos_invested_amount'
-            ),
+        ),
     )
 
     def close(self):
